@@ -51,8 +51,4 @@ ProductProvider.init({
   modelName: 'product_providers' // We need to choose the model name
 });
 
-Product.belongsTo(Category);
-
-Product.belongsToMany(Provider, { through: 'product_providers' });
-
-module.exports = Product;
+module.exports = ProductProvider;
