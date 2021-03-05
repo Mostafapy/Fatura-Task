@@ -1,12 +1,10 @@
+require('dotenv').config({ path: '.env' });
 const express = require('express');
-const dotenv = require('dotenv');
 const morgan = require('morgan');
-const { connectDB  } = require('./config/db');
+const initApp = require('./common/init');
+const config = require('./common/config/config');
 // Routes
 // const routes = require('./routes/index');
-
-// Load env vars
-dotenv.config({ path: '.env' });
 
 const app = express();
 
@@ -29,14 +27,11 @@ if (process.env.NODE_ENV === 'development') {
    );
 }
 
-// Establish DB coneection
-connectDB();
-
-// Mount the routes
-// app.use(routes);
+// Establish DB connection and mount routes
+initApp();
 
 // Port
-const port = process.env.PORT || '3000';
+const port = config.app.port || '3000';
 
 // Listen
 const server = app.listen(port, () =>
