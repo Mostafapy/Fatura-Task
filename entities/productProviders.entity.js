@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes, Model } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
 const Category = require('./category.entity');
 const Provider = require('./provider.entity');
-const sequelize = new Sequelize('sqlite::memory');
+const { sequelize } = require('./../config/db');
 
 class ProductProvider extends Model {}
 
