@@ -1,6 +1,7 @@
 const { DataTypes, Model } = require('sequelize');
 const Product = require('./product.entity');
 const { sequelize } = require('./../config/db');
+const { init } = require('./product.entity');
 
 class Provider extends Model {}
 
@@ -20,7 +21,7 @@ Provider.init({
   },
 }, {
   // Other model options go here
-  sequelize, // We need to pass the connection instance
+  sequelize: init(), // We need to pass the connection instance
   modelName: 'provider' // We need to choose the model name
 });
 
