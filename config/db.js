@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const initializeEntities = require('./../entities');
+const initializeEntities = require('../entities');
 
 const connectDB = async () => {
   try {
