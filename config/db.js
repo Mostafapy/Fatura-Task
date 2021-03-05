@@ -19,7 +19,7 @@ const sequelize = new Sequelize({
         },
 });
 
-const connectDB = (sequelize) => {
+const connectDB = async (sequelize) => {
   try {
     await sequelize.authenticate();
     
