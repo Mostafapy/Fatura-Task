@@ -6,7 +6,7 @@ const sequelize = new Sequelize({
         port: process.env.DATABASE_PORT,
         username: process.env.DATABASE_USERNAME,
         password: process.env.DATABASE_PASWORD,
-        database: process.env.DATABASE_DATABASE,
+        database: process.env.DATABASE_DATABASENAME,
         logging: (query) => {
           console.log('query', { query });
         },
