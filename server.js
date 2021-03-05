@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
-
+const { connectDB, sequelize } = require('./config/db');
 // Routes
 // const routes = require('./routes/index');
 
@@ -28,6 +28,9 @@ if (process.env.NODE_ENV === 'development') {
       ),
    );
 }
+
+// Establish DB coneection
+await connectDB(sequelize);
 
 // Mount the routes
 // app.use(routes);
