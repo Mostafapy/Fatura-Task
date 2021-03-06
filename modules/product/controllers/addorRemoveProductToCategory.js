@@ -1,4 +1,5 @@
 const { NOT_FOUND } = require("http-status-codes");
+const asyncHandler = require("../../../common/middleware/async");
 const ErrorResponse = require("../../../common/utils/errorResponse");
 const Category = require("../../../entities/category.entity");
 const Product = require("../../../entities/product.entity");
@@ -28,7 +29,5 @@ module.exports = asyncHandler(async (req, res, next) => {
      }
 
       // Get product by id
-      const product = await Product.findOne({ where: { id } });
-
-      return product;
+      return await Product.findOne({ where: { id } });
 });

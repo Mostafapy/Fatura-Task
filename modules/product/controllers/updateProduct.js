@@ -17,10 +17,10 @@ module.exports = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse('No Product found', NOT_FOUND));
   }
   // update product
-  const product = await Product.update(req.body, { where: { id }});;
+  await Product.update(req.body, { where: { id }});;
 
-  const product = await Product.findOne({ where: { id } });
+  const result = await Product.findOne({ where: { id } });
   return res
     .status(OK)
-    .json({ status: true, message: 'Provider Updated', data: product });
+    .json({ status: true, message: 'Provider Updated', data: result });
 });

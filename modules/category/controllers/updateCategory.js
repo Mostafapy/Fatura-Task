@@ -17,10 +17,10 @@ module.exports = asyncHandler(async (req, res, next) => {
     return next(new ErrorResponse('No Category found', NOT_FOUND));
   }
   // update category
-  const category = await Category.update(req.body, { where: { id }});
+  await Category.update(req.body, { where: { id }});
 
-  const category = await Category.findOne({ where: { id } });
+  const result = await Category.findOne({ where: { id } });
   return res
     .status(OK)
-    .json({ status: true, message: 'Provider Updated', data: category });
+    .json({ status: true, message: 'Provider Updated', data: result });
 });
