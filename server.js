@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // Establish DB connection and mount routes
-initApp();
+initApp(app);
 
 // Port
 const port = config.app.port || '3000';

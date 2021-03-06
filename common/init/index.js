@@ -1,4 +1,5 @@
 const connectDB  = require('./init-db');
+const initRoutes = require('./init-routes');
 
 /**
  * @function
@@ -6,6 +7,7 @@ const connectDB  = require('./init-db');
  *
  * @param {object} app - Express app.
  */
-module.exports = () => {
+module.exports = (app) => {
   connectDB();
+  initRoutes(app);
 };
