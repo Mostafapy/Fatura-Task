@@ -36,6 +36,7 @@ class ProductProvider extends Model {
         available: {
           type: DataTypes.BOOLEAN,
           allowNull: false,
+          defaultValue: false
         }
       }, {
         // Other model options go here
