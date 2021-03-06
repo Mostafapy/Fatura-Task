@@ -65,6 +65,8 @@ DROP TABLE IF EXISTS `product_providers`;
 CREATE TABLE `product_providers` (
   `productId` int NOT NULL,
   `providerId` int NOT NULL,
+  `available` tinyint NOT NULL DEFAULT '0',
+  `price` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`productId`,`providerId`),
   KEY `IDX_product` (`productId`),
   KEY `IDX_provider` (`providerId`),
